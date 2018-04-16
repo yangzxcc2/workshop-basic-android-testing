@@ -1,7 +1,9 @@
-package workshop.testing;
+package workshop.testing.ui.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import workshop.testing.R;
 
 public class MainActivity extends AppCompatActivity {
 
