@@ -20,5 +20,16 @@ public class RecipeTest {
         assertEquals("Water",recipe.title);
         assertEquals("Put glass under tap. Open tap. Close tap. Drink.",recipe.description);
     }
+    @Test
+    public void no_id(){
+        //Arrange
+        InputStream inputStream = RecipeTest.class.getResourceAsStream("/recipes/no_id.txt");
+        //Act
+        Recipe recipe = Recipe.readFromStream(inputStream);
+        //Assert
+        assertNotNull(recipe);
+        assertEquals("Water",recipe.title);
+        assertEquals("Put glass under tap. Open tap. Close tap. Drink.",recipe.description);
+    }
 
 }
