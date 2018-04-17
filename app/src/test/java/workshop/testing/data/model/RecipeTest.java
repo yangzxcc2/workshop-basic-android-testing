@@ -2,6 +2,7 @@ package workshop.testing.data.model;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.*;
@@ -49,6 +50,14 @@ public class RecipeTest {
                 "1 pine apple juice\n" +
                 "Mix all together and strain. Add large piece of ice.",recipe.description);
 
+    }
+    @Test
+    public void return_null() throws IOException {
+        InputStream inputStream = RecipeTest.class.getResourceAsStream("/recipes/water.txt");
+        inputStream.close();
+
+        Recipe recipe = Recipe.readFromStream(inputStream);
+        assertNull(recipe);
     }
 
 }
